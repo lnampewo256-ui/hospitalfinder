@@ -23,11 +23,10 @@ workflows:
       - build/app/outputs/flutter-apk/app-release.apk
       - build/ios/ipa/*.ipa
     publishing:
-      email:
-        recipients:
-          - your_email@example.com
-      app_store_connect:
-        apple_id: your_apple_id@example.com
-        password: $APP_STORE_CONNECT_PASSWORD
-        team_id: YOUR_TEAM_ID
-        app_id: YOUR_APP_ID
+  email:
+    recipients:
+      - your_email@example.com
+  app_store_connect:
+    apple_id: your_apple_id@example.com
+    password: $APP_STORE_CONNECT_PASSWORD
+
