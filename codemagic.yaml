@@ -1,0 +1,33 @@
+workflows:
+  hospital_finder_workflow:
+    name: Hospital Finder App
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        PACKAGE_NAME: "com.example.hospitalfinder"
+    scripts:
+      - name: Install dependencies
+        script: |
+          flutter clean
+          flutter pub get
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+      - name: Build iOS IPA
+        script: |
+          flutter build ipa --release --no-codesign
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - your_email@example.com
+      app_store_connect:
+        apple_id: your_apple_id@example.com
+        password: $APP_STORE_CONNECT_PASSWORD
+        team_id: YOUR_TEAM_ID
+        app_id: YOUR_APP_ID
