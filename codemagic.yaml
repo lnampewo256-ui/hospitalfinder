@@ -5,7 +5,7 @@ workflows:
       groups:
         - name: "app_store_connect"
           variables:
-            APP_STORE_CONNECT_PASSWORD: $APP_STORE_CONNECT_PASSWORD
+            APP_STORE_CONNECT_PASSWORD: "secure"
     scripts:
       - name: Install dependencies
         script: |
