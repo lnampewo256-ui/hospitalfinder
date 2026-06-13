@@ -3,9 +3,7 @@ workflows:
     name: Hospital Finder Workflow
     environment:
       groups:
-        - name: "app_store_connect"
-          variables:
-            APP_STORE_CONNECT_PASSWORD: "secure"
+        - app_store_connect
     scripts:
       - name: Install dependencies
         script: |
